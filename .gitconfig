@@ -6,7 +6,7 @@
 	attributesfile = ~/.gitattributes
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -31,7 +31,7 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-	
+
 [alias]
 	st = status
 	ci = commit
@@ -47,6 +47,12 @@
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	undo = reset HEAD~1 --mixed
+	amend = commit -a --amend
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 
 [push]
 	default = simple
