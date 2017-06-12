@@ -70,7 +70,7 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 
 # set default text editor
 #export EDITOR=/usr/bin/open
-export EDITOR='subl -w'
+export EDITOR='atom '
 
 # git command prompt updates
 source ~/.git-completion.sh
@@ -78,5 +78,3 @@ source ~/.git-prompt.sh
 
 # export PS1="\[\033[1;34m\]\!\[\033[0m\] \[\033[1;35m\]\u\[\033[0m\]:\[\033[1;35m\]\W$(__git_ps1 "(%s)")\[\033[0m\]$ "
 export PS1='\[\033[1;34m\]\!\[\033[0m\] \[\033[1;35m\]\u\[\033[0m\]:\[\033[1;35m\]\W\[\033[0m\] \[\033[1;92m\]$(__git_ps1 "(%s)")\[\033[0m\]$ '
-
-
